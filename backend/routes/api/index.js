@@ -1,15 +1,12 @@
 const router = require("express").Router();
+const {
+  setTokenCookie,
+  restoreUser,
+  requireAuth,
+} = require("../../utils/auth.js");
 
-router.post("/test", function (req, res) {
-  res.json({ requestBody: req.body });
-});
+const { User } = require("../../db/models");
 
-router.get("/csrf/restore", (req, res) => {
-  const csrfToken = req.csrfToken();
-  res.cookie("XSRF-TOKEN", csrfToken);
-  res.status(200).json({
-    "XSRF-Token": csrfToken,
-  });
-});
+router.use(restoreUser);
 
 module.exports = router;
