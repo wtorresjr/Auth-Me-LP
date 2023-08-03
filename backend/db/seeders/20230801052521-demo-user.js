@@ -1,5 +1,6 @@
 "use strict";
 const bcrypt = require("bcryptjs");
+const { Op } = require("sequelize");
 
 let options = {};
 if (process.env.NODE_ENV === "production") {
@@ -13,8 +14,8 @@ const seedUsers = [
     hashedPassword: bcrypt.hashSync("password"),
     firstName: "FakeFirst1",
     lastName: "FakeLast1",
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    // createdAt: new Date(),
+    // updatedAt: new Date(),
   },
   {
     email: "user1@user.io",
@@ -22,8 +23,8 @@ const seedUsers = [
     hashedPassword: bcrypt.hashSync("password2"),
     firstName: "FakeFirst2",
     lastName: "FakeLast2",
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    // createdAt: new Date(),
+    // updatedAt: new Date(),
   },
   {
     email: "user2@user.io",
@@ -31,8 +32,8 @@ const seedUsers = [
     hashedPassword: bcrypt.hashSync("password3"),
     firstName: "FakeFirst3",
     lastName: "FakeLast3",
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    // createdAt: new Date(),
+    // updatedAt: new Date(),
   },
 ];
 
@@ -44,7 +45,6 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     options.tableName = "Users";
-    const Op = Sequelize.Op;
     return await queryInterface.bulkDelete(
       options,
       {
