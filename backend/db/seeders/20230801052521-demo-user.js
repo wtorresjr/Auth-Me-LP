@@ -96,13 +96,13 @@ const seedUsers = [
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     // Add the table name 'Users' as the first argument of bulkCreate
-    return queryInterface.bulkCreate("Users", seedUsers, options);
+    return await queryInterface.bulkCreate("Users", seedUsers, options);
   },
 
   down: async (queryInterface, Sequelize) => {
     // Add the table name 'Users' as the first argument of bulkDelete
     const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(
+    return await queryInterface.bulkDelete(
       "Users", // Table name goes here
       {
         username: { [Op.in]: ["Demo-lition", "FakeUser1", "FakeUser2"] },
