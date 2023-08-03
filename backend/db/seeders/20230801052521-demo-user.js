@@ -40,7 +40,7 @@ const seedUsers = [
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     options.tableName = "Users";
-    return await queryInterface.bulkCreate(options, seedUsers, {});
+    return await queryInterface.bulkInsert(options, seedUsers, {});
   },
 
   down: async (queryInterface, Sequelize) => {
