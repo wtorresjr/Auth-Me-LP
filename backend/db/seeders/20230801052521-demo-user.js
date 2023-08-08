@@ -9,8 +9,8 @@ if (process.env.NODE_ENV === "production") {
 
 const seedUsers = [
   {
-    email: "demo@user.io",
-    username: "Demo-lition",
+    email: "user1@user.io",
+    username: "User1",
     hashedPassword: bcrypt.hashSync("password"),
     firstName: "FakeFirst1",
     lastName: "FakeLast1",
@@ -18,8 +18,8 @@ const seedUsers = [
     // updatedAt: new Date(),
   },
   {
-    email: "user1@user.io",
-    username: "FakeUser1",
+    email: "user2@user.io",
+    username: "User2",
     hashedPassword: bcrypt.hashSync("password2"),
     firstName: "FakeFirst2",
     lastName: "FakeLast2",
@@ -27,8 +27,8 @@ const seedUsers = [
     // updatedAt: new Date(),
   },
   {
-    email: "user2@user.io",
-    username: "FakeUser2",
+    email: "user3@user.io",
+    username: "User3",
     hashedPassword: bcrypt.hashSync("password3"),
     firstName: "FakeFirst3",
     lastName: "FakeLast3",
@@ -48,7 +48,7 @@ module.exports = {
     return await queryInterface.bulkDelete(
       options,
       {
-        username: { [Op.in]: ["Demo-lition", "FakeUser1", "FakeUser2"] },
+        username: { [Op.in]: ["User1", "User2", "User3"] },
       },
       {}
     );
