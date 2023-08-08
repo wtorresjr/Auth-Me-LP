@@ -9,20 +9,20 @@ if (process.env.NODE_ENV === "production") {
 
 const seedBookings = [
   {
+    userId: 3,
     spotId: 1,
-    userId: 1,
     startDate: "2023-10-01",
     endDate: "2023-10-15",
   },
   {
-    spotId: 2,
     userId: 2,
+    spotId: 3,
     startDate: "2023-08-15",
     endDate: "2023-08-25",
   },
   {
-    spotId: 3,
-    userId: 3,
+    userId: 1,
+    spotId: 2,
     startDate: "2023-9-01",
     endDate: "2023-9-15",
   },
